@@ -7,8 +7,27 @@
 
     //ENTRADA
 
+    const nInicial = Number(prompt(`Informe um número inicial:`));
+    const nFinal = Number(prompt(`Informe um número final:`));
     
     //PROCESSAMENTO
+    let par = [];
+    let impar = [];
+
+    if ( nInicial < nFinal ){
+        for ( let contador = nInicial; contador <= nFinal; contador++){
+            if ( contador % 2 === 0){
+                par.push(contador);
+            }
+            else {
+                impar.push(contador);
+            }
+        }
+        document.write(`Números pares entres ${nInicial} e ${nFinal} : ${par.join(" , ")}. <br> Números ímpares entre ${nInicial} e ${nFinal} : ${impar.join(" , ")}.`);
+    }
+    else {
+        alet(`Erro!!!`);
+    }
 
     
     //SAÍDA

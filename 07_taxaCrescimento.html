@@ -7,10 +7,17 @@
 
     //ENTRADA
 
+    let habitantes = 80000;
+    let ano = 0;
     
     //PROCESSAMENTO
+    for (let contador = 0; habitantes <= 200000; contador++){
+       habitantes = habitantes * 1.03;
+       ano++;
+    }
 
     
     //SAÍDA
+    document.write(`Para que o número de habitantes atinja 200000 será necessário ${ano} anos.`)
 
 </script>
