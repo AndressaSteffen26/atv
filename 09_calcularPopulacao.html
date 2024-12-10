@@ -6,11 +6,15 @@
     */
 
     //ENTRADA
-
+    let habitantes = [50000];
     
     //PROCESSAMENTO
+    for ( let ano = 0; ano < 10; ano++){
+        habitantes.push(habitantes[ano] * 1.015);
+    }
     
 
     //SAÍDA
+    document.write(`A população após cinco anos será : ${habitantes[5]} habitantes. <br> A população após dez anos será de : ${habitantes[10]} habitantes.`);
 
 </script>

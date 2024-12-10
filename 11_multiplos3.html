@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     /*
     PROBLEMA: Múltiplos de 3
@@ -5,11 +6,22 @@
     */
 
     //ENTRADA
+    let tres = [];
+    let soma = 0;
 
 
     //PROCESSAMENTO
+    for (let contador = 1; contador < 100; contador++) {
+        if(contador % 3 === 0 ){
+        tres.push(contador);
+        }    
+    }
+    for (let contador = 0; contador < tres.length; contador++) {
+        soma += tres[contador];
+    }
 
 
     //SAÍDA
+    document.write(`Os números múltiplos de três são : ${tres.join(" - ")} <br> A soma de todos os números é : ${soma}`);
 
 </script>

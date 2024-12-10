@@ -9,10 +9,56 @@
 
     //ENTRADA
 
+    const candidato1 = prompt(`Informe o nome do primeiro candidato:`);
+    const candidato2 = prompt(`Informe o nome do segundo candidato:`);
+    const candidato3 = prompt(`Informe o nome do terceiro candidato:`);
+    const votantes = Number(prompt(`Informe a quantidade de alunos votantes:`));
 
     //PROCESSAMENTO
 
+    let votos1 = 0;
+    let votos2 = 0;
+    let votos3 = 0;
+    let nulos = 0;
+    for ( let contador = 0; contador < votantes; contador++){
+        const votacao = Number(prompt(`O seu voto é para:
+    ${candidato1} - Digite 1;
+    ${candidato2} - Digite 2;
+    ${candidato3} - Digite 3;`));
+        if ( votacao == 1 ){
+            votos1 = votos1 + 1;
+        }
+        else if ( votacao == 2 ){
+            votos2 = votos2 + 1;
+        }
+        else if ( votacao == 3 ){
+            votos3 = votos3 + 1;
+        }
+        else {
+            nulos = nulos + 1;
+        }
+    }
+    const porcentagem1 = votos1 * 100 / votantes;
+    const porcentagem2 = votos2 * 100 / votantes;
+    const porcentagem3 = votos3 * 100 / votantes;
+    const porcentagemNulos = nulos * 100 / votantes;
 
     //SAÍDA
+    if (votos1 > votos2 && votos1 > votos3 && votos1 > nulos) {
+        alert(`O candidato 1: ${candidato1} é o vencedor.`);
+    }
+    else if (votos2 > votos1 && votos2 > votos3 && votos2 > nulos) {
+        alert(`O candidato 2: ${candidato2} é o vencedor.`);
+    }
+    else if (votos3 > votos1 && votos3 > votos2 && votos3 > nulos) {
+        alert(`O candidato 3: ${candidato3} é o vencedor.`);
+    }
+    else {
+        alert(`A maior quantidade de votos foi nulo.`);
+    }
+    document.write(`O candidato 1: ${candidato1} obteve ${votos1} votos, que representa ${porcentagem1.toFixed(1).replace(".",",")}% da votação;
+    <br> O candidato 2: ${candidato2} obteve ${votos2} votos, que representa ${porcentagem2.toFixed(1).replace(".",",")}% da votação;
+    <br> O candidato 3: ${candidato3} obteve ${votos3} votos, que representa ${porcentagem3.toFixed(1).replace(".",",")}% da votação;
+    <br> Houve ${nulos} votos nulos, que representa ${porcentagemNulos.toFixed(1).replace(".",",")}% da votação.`);
 
 </script>

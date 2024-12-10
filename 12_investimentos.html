@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     /*
     PROBLEMA: Investimentos
@@ -5,11 +6,24 @@
     */
 
     //ENTRADA
+    let investimento = 1000;
+    let dia = 0;
 
 
     //PROCESSAMENTO
+    for (let contador = 0; investimento <= 2000; contador++){
+    if (contador % 5 === 0 || contador % 5 === 1){
+        dia++;
+    }
+    else{
+        investimento = investimento * 1.02;
+        dia++;
+    }
+    
+}
 
 
     //SAÍDA
+    document.write(`Demorarão ${dia} dias para que Joãozinho consiga R$ 2.000,00 com seu investimento.`);
 
 </script>
